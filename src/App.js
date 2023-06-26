@@ -8,26 +8,46 @@ import Diary from "./pages/Diary";
 
 //components
 import MyButton from "./components/MyButton";
+import MyHeader from "./components/MyHeader";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <MyHeader
+          headText={"App"}
+          leftChild={
+            <MyButton
+              text={"왼쪽 버튼"}
+              onClick={() => {
+                alert("왼쪽 클릭");
+              }}
+            />
+          }
+          righthChild={
+            <MyButton
+              text={"오른쪽 버튼"}
+              onClick={() => {
+                alert("오른쪽 클릭");
+              }}
+            />
+          }
+        />
         <h2>App.js</h2>
 
         <MyButton
-          text={"버튼"}
-          onClick={() => alert("버튼클릭")}
+          text={"작성완료"}
+          onClick={() => alert("작성완료 버튼클릭")}
           type={"positive"}
         />
 
+        <MyButton text={"수정하기"} onClick={() => alert("버튼클릭")} />
+
         <MyButton
-          text={"버튼"}
-          onClick={() => alert("버튼클릭")}
+          text={"삭제하기"}
+          onClick={() => alert("삭제하기 버튼클릭")}
           type={"negative"}
         />
-
-        <MyButton text={"버튼"} onClick={() => alert("버튼클릭")} />
 
         <Routes>
           <Route path="/" element={<Home />} />
