@@ -6,6 +6,8 @@ import MyHeader from "./MyHeader";
 import MyButton from "./MyButton";
 import EmotionItem from "./EmotionItem";
 
+import { getStringDate } from "./util/date";
+
 const emotionList = [
   {
     emotion_id: 1,
@@ -25,7 +27,7 @@ const emotionList = [
   {
     emotion_id: 4,
     emotion_img: process.env.PUBLIC_URL + `/assets/emotion4.png`,
-    emotion_descript: "나쁘",
+    emotion_descript: "나쁨",
   },
   {
     emotion_id: 5,
@@ -33,10 +35,6 @@ const emotionList = [
     emotion_descript: "끔찍함",
   },
 ];
-
-const getStringDate = (date) => {
-  return date.toISOString().slice(0, 10);
-};
 
 const DiaryEditor = ({ isEdit, originData }) => {
   const contentRef = useRef();
